@@ -1,0 +1,32 @@
+<ion-toolbar>
+    <ion-title style="color:#919191">Login</ion-title>
+</ion-toolbar>
+
+<ion-content class="login" padding style="text-align:center">
+
+    <img src="images/zillow-logo.png"  style="height:40px;width:155px;margin:30px 0"/>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <button block large (click)="login()">
+        Login
+    </button>
+
+    <button block large facebook (click)="login()" style="margin-top:12px">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Login with Facebook
+    </button>
+
+</ion-content>

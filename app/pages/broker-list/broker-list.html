@@ -1,0 +1,18 @@
+<ion-navbar light *navbar>
+    <button menuToggle style="border-radius: 0">
+        <img src="images/zillow-logo-menu.png" style="height:32px"/>
+    </button>
+    <ion-title>Find an Agent</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="let broker of brokers" (click)="itemTapped($event, broker)">
+            <ion-avatar item-left>
+                <img src="{{broker.picture}}"/>
+            </ion-avatar>
+            <h2>{{broker.name}}</h2>
+            <p>{{broker.title}}</p>
+        </button>
+    </ion-list>
+</ion-content>

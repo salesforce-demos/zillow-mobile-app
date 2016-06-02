@@ -1,0 +1,53 @@
+<ion-navbar light *navbar>
+    <button menuToggle style="border-radius: 0">
+        <img src="images/zillow-logo-menu.png" style="height:32px"/>
+    </button>
+    <!--<ion-title>Properties</ion-title>-->
+    <ion-searchbar placeholder="Location"></ion-searchbar>
+</ion-navbar>
+
+
+<ion-content *ngIf="view==='map'">
+    <div style="width:100%;height:100%;background-image:url('images/map.png');background-size: cover"></div>
+</ion-content>
+
+
+<ion-content *ngIf="view==='list'" class="card-background-page">
+    <ion-card *ngFor="let property of properties" (tap)="itemTapped($event, property)">
+        <div class="card-buttons">
+            <button clear style="margin-right:-20px" (click)="itemFavorited($event, property)">
+                <ion-icon name="heart-outline"></ion-icon>
+            </button>
+            <button clear  (click)="itemBlocked($event, property)">
+                <ion-icon name="remove-circle-outline"></ion-icon>
+            </button>
+        </div>
+        <img src="{{property.picture}}"/>
+        <div class="card-title">{{property.priceFormatted}}</div>
+        <div class="card-subtitle">{{property.address}} {{property.city}} ∙ {{property.beds}}bd ∙ {{property.baths}}ba</div>
+    </ion-card>
+
+</ion-content>
+
+
+<ion-toolbar light position="bottom">
+    <ion-row no-padding>
+        <ion-col>
+            <button clear>
+                <span *ngIf="view==='map'">Draw</span>
+                <span *ngIf="view==='list'">Sort</span>
+            </button>
+        </ion-col>
+        <ion-col text-center>
+            <button clear>
+                Save Search
+            </button>
+        </ion-col>
+        <ion-col text-right>
+            <button clear (click)="toggleView($event, property)">
+                <span *ngIf="view==='map'">List</span>
+                <span *ngIf="view==='list'">Map</span>
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-toolbar>
