@@ -28,6 +28,12 @@
   color: #919191;
 }
 
+ion-item-divider {
+  color: #919191;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 16px;
+}
 
 @import "../pages/login/login";
 

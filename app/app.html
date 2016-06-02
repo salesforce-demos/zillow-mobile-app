@@ -1,66 +1,77 @@
 <ion-menu [content]="content">
 
-    <img src="images/zillow-logo.png" style="height:40px;width:155px;margin:32px 0 12px 60px;"/>
+    <img src="images/zillow-logo.png" style="height:40px;width:155px;margin:32px 0 16px 60px;"/>
 
     <ion-content>
         <ion-list>
 
-            <ion-list-header>Home Search</ion-list-header>
-            <button menuClose ion-item (click)="openPage(pages.welcome)">
-                <ion-icon item-left name="help-circle-outline"></ion-icon>
-                Welcome
-            </button>
-            <button menuClose ion-item (click)="openPage(pages.propertyList)">
-                <ion-icon item-left name="search-outline"></ion-icon>
-                For Sale
-            </button>
-            <button menuClose ion-item (click)="openPage(pages.propertyList)">
-                <ion-icon item-left name="search-outline"></ion-icon>
-                For Rent
-            </button>
-            <button menuClose ion-item (click)="openPage(pages.brokerList)">
-                <ion-icon item-left name="person-outline"></ion-icon>
-                Find an Agent
-            </button>
+            <ion-item-group>
+                <ion-item-divider>Home Search</ion-item-divider>
+                <button menuClose ion-item (click)="openPage(pages.welcome)">
+                    <ion-icon item-left name="help-circle-outline"></ion-icon>
+                    Welcome
+                </button>
+                <button menuClose ion-item (click)="openPage(pages.propertyList)">
+                    <ion-icon item-left>
+                        <img src="images/sale.png" style="height:16px;width:16px;"/>
+                    </ion-icon>
+                    For Sale
+                </button>
+                <button menuClose ion-item (click)="openPage(pages.propertyList)">
+                    <ion-icon item-left>
+                        <img src="images/rent.png" style="height:16px;width:16px;"/>
+                    </ion-icon>
+                    For Rent
+                </button>
+                <button menuClose ion-item (click)="openPage(pages.brokerList)">
+                    <ion-icon item-left name="person-outline"></ion-icon>
+                    Find an Agent
+                </button>
+            </ion-item-group>
 
+            <ion-item-group>
+                <ion-item-divider>My Zillow</ion-item-divider>
+                <button menuClose ion-item>
+                    <ion-icon item-left name="timer-outline"></ion-icon>
+                    Recently Viewed
+                </button>
+                <button menuClose ion-item  (click)="openPage(pages.favoriteList)">
+                    <ion-icon item-left name="heart-outline"></ion-icon>
+                    Saved Homes
+                </button>
+                <button menuClose ion-item>
+                    <ion-icon item-left name="bookmark-outline"></ion-icon>
+                    Saved Searches
+                </button>
+             </ion-item-group>
 
-            <ion-list-header>My Zillow</ion-list-header>
-            <button menuClose ion-item>
-                <ion-icon item-left name="timer-outline"></ion-icon>
-                Recently Viewed
-            </button>
-            <button menuClose ion-item  (click)="openPage(pages.favoriteList)">
-                <ion-icon item-left name="heart-outline"></ion-icon>
-                Saved Homes
-            </button>
-            <button menuClose ion-item>
-                <ion-icon item-left name="bookmark-outline"></ion-icon>
-                Saved Searches
-            </button>
+            <ion-item-group>
+                <ion-item-divider>Mortgage</ion-item-divider>
+                <button menuClose ion-item >
+                    <ion-icon item-left name="checkmark-circle-outline"></ion-icon>
+                    Get Pre-Approved
+                </button>
+                <button menuClose ion-item >
+                    <ion-icon item-left name="cart-outline"></ion-icon>
+                    Shop Rates
+                </button>
+             </ion-item-group>
 
-            <ion-list-header>Mortgage</ion-list-header>
-            <button menuClose ion-item >
-                <ion-icon item-left name="checkmark-circle-outline"></ion-icon>
-                Get Pre-Approved
-            </button>
-            <button menuClose ion-item >
-                <ion-icon item-left name="cart-outline"></ion-icon>
-                Shop Rates
-            </button>
-
-            <ion-list-header>Account</ion-list-header>
-            <button menuClose ion-item>
-                <ion-icon item-left name="person-outline"></ion-icon>
-                Sign In / Register
-            </button>
-            <button menuClose ion-item>
-                <ion-icon item-left name="settings-outline"></ion-icon>
-                Settings
-            </button>
-            <button menuClose ion-item (click)="logoutUser()">
-                <ion-icon item-left name="log-out-outline"></ion-icon>
-                Logout
-            </button>
+            <ion-item-group>
+                <ion-item-divider>Account</ion-item-divider>
+                <button menuClose ion-item>
+                    <ion-icon item-left name="person-outline"></ion-icon>
+                    Sign In / Register
+                </button>
+                <button menuClose ion-item>
+                    <ion-icon item-left name="settings-outline"></ion-icon>
+                    Settings
+                </button>
+                <button menuClose ion-item (click)="logoutUser()">
+                    <ion-icon item-left name="log-out-outline"></ion-icon>
+                    Logout
+                </button>
+            </ion-item-group>
         </ion-list>
     </ion-content>
 

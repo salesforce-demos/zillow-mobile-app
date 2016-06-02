@@ -58,36 +58,36 @@ class MyApp {
                 console.log("logged in");
             });
 
-            if (window.PushNotification) {
-                let push = window.PushNotification.init({
-                    "ios": {
-                        "alert": true,
-                        "sound": true,
-                        "vibration": true,
-                        "badge": true
-                    }
-                });
-
-                push.on('registration', data => {
-                    this.pushService.register(force.getUserId(), data.registrationId).subscribe();
-                    console.log("registration event: " + data.registrationId);
-                });
-
-                push.on('notification', data => {
-                    if (data.additionalData.foreground) {
-                        let alert = Alert.create({
-                            title: "Price Change",
-                            subTitle: data.message,
-                            buttons: ['OK']
-                        });
-                        this.nav.present(alert);
-                    }
-                });
-
-                push.on('error', e => {
-                    console.log("push error = " + e.message);
-                });
-            }
+            //if (window.PushNotification) {
+            //    let push = window.PushNotification.init({
+            //        "ios": {
+            //            "alert": true,
+            //            "sound": true,
+            //            "vibration": true,
+            //            "badge": true
+            //        }
+            //    });
+            //
+            //    push.on('registration', data => {
+            //        this.pushService.register(force.getUserId(), data.registrationId).subscribe();
+            //        console.log("registration event: " + data.registrationId);
+            //    });
+            //
+            //    push.on('notification', data => {
+            //        if (data.additionalData.foreground) {
+            //            let alert = Alert.create({
+            //                title: "Price Change",
+            //                subTitle: data.message,
+            //                buttons: ['OK']
+            //            });
+            //            this.nav.present(alert);
+            //        }
+            //    });
+            //
+            //    push.on('error', e => {
+            //        console.log("push error = " + e.message);
+            //    });
+            //}
 
         });
 
