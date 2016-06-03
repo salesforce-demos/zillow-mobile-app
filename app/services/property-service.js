@@ -68,6 +68,7 @@ export class PropertyService {
                                 picture__c,
                                 beds__c,baths__c,
                                 description__c,
+                                X360_Photo_URL__c,
                                 broker__r.Id,
                                 broker__r.Name,
                                 broker__r.Title__c,
