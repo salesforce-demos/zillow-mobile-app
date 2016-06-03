@@ -41,6 +41,14 @@
                     <p>{{property.broker.title}}</p>
                 </button>
             </ion-list>
+            <ion-card-content class="bottom-border">
+                 <h2 class="card-title">
+                     360° View
+                 </h2>
+                 <div class="theta-wrapper">
+                     <iframe src="{{property.thetaUrl}}"></iframe>
+                 </div>
+             </ion-card-content>
             <ion-row no-padding>
                 <ion-col>
                     <button clear small (click)="favorite($event, property)">

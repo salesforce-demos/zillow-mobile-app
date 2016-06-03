@@ -16,6 +16,7 @@ let prettifyProperty = (property) => {
         beds: property.Beds__c,
         baths: property.Baths__c,
         description: property.Description__c,
+        thetaUrl: property.X360_Photo_URL__c,
         picture: property.Picture__c,
         thumbnail: property.Thumbnail__c,
         likes: Math.floor(Math.random() * 20) + 1 // Likes are simulated: random number between 0 and 20. See "Favorites" for similar functionality.
@@ -50,7 +51,8 @@ export class PropertyService {
                                    thumbnail__c,
                                    picture__c,
                                    beds__c,
-                                   baths__c
+                                   baths__c,
+                                   X360_Photo_URL__c,
                             FROM property__c`)
                 .then(response => response.records.map(prettifyProperty));
     }
@@ -80,7 +82,8 @@ export class PropertyService {
                                    Property__r.City__c,
                                    Property__r.State__c,
                                    Property__r.Price__c,
-                                   Property__r.Thumbnail__c
+                                   Property__r.Thumbnail__c,
+                                   Property__r.X360_Photo_URL__c
                             FROM favorite__c
                             WHERE user__c='${force.getUserId()}'`)
             .then(response => response.records.map(favorite => prettifyFavorite(favorite)));
