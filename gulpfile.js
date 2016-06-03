@@ -44,7 +44,7 @@ gulp.task('watch', ['clean'], function(done){
       buildBrowserify({ watch: true }).on('end', done);
     }
   );
-});
+}); 
 
 gulp.task('build', ['clean'], function(done){
   runSequence(
