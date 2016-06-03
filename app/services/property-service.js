@@ -52,7 +52,7 @@ export class PropertyService {
                                    picture__c,
                                    beds__c,
                                    baths__c,
-                                   X360_Photo_URL__c,
+                                   X360_Photo_URL__c
                             FROM property__c`)
                 .then(response => response.records.map(prettifyProperty));
     }
