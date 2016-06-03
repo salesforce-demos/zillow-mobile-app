@@ -33,7 +33,7 @@ var copyHTML = require('ionic-gulp-html-copy');
 var copyFonts = require('ionic-gulp-fonts-copy');
 var copyScripts = require('ionic-gulp-scripts-copy');
 
-var isRelease = argv.indexOf('--release') > -1;
+var isRelease = argv.indexOf('--release') > -1; 
 
 gulp.task('watch', ['clean'], function(done){
   runSequence(
@@ -43,7 +43,7 @@ gulp.task('watch', ['clean'], function(done){
       gulpWatch('app/**/*.html', function(){ gulp.start('html'); });
       buildBrowserify({ watch: true }).on('end', done);
     }
-  );
+  ); 
 });
 
 gulp.task('build', ['clean'], function(done){
