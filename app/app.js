@@ -51,7 +51,7 @@ class MyApp {
             StatusBar.styleDefault();
 
             force.init({
-                appId: "3MVG9sG9Z3Q1Rlbc4tkIx2fI3ZYblYiG9oMxlbHO3gixLK8CcH.342BxX6L7NT8W4iND3lT9h52sAq1KtTIiz",
+                appId: "3MVG9SemV5D80oBdbv8x5YDbjSMmUHopMsG1PiHTsPLFuN.6EB10lK8Yy7muEbPzkLhM98uPXqRxXN4R_i.3j",
                 proxyURL: "https://dev-cors-proxy.herokuapp.com/"
             });
             force.login().then(() => {
