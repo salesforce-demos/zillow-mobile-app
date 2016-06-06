@@ -8,6 +8,7 @@ import * as force from './../force';
 let prettifyProperty = (property) => {
     let prettyProperty = {
         id: property.Id,
+        address: property.Address__c,
         title: property.Title__c,
         city: property.City__c,
         state: property.State__c,
@@ -19,6 +20,7 @@ let prettifyProperty = (property) => {
         thetaUrl: property.X360_Photo_URL__c,
         picture: property.Picture__c,
         thumbnail: property.Thumbnail__c,
+        daysonzillow: property.Days_on_Zillow__c,
         likes: Math.floor(Math.random() * 20) + 1 // Likes are simulated: random number between 0 and 20. See "Favorites" for similar functionality.
     };
     prettyProperty.broker = property.Broker__r ?
@@ -34,7 +36,8 @@ let prettifyProperty = (property) => {
 let prettifyFavorite = (favorite) => {
     return {
         id: favorite.Id,
-        property: prettifyProperty(favorite.Property__r)
+        property: prettifyProperty(favorite.Property__r),
+        property_id: favorite.Property__r.Id
     };
 };
 
@@ -52,7 +55,8 @@ export class PropertyService {
                                    picture__c,
                                    beds__c,
                                    baths__c,
-                                   X360_Photo_URL__c
+                                   X360_Photo_URL__c,
+                                   Days_on_Zillow__c
                             FROM property__c`)
                 .then(response => response.records.map(prettifyProperty));
     }
@@ -69,6 +73,7 @@ export class PropertyService {
                                 beds__c,baths__c,
                                 description__c,
                                 X360_Photo_URL__c,
+                                Days_on_Zillow__c,
                                 broker__r.Id,
                                 broker__r.Name,
                                 broker__r.Title__c,
@@ -78,16 +83,18 @@ export class PropertyService {
 
     getFavorites() {
         return force.query(`SELECT id,
-                                   Property__r.Id,
+                                   Property__r.id,
                                    Property__r.Title__c,
                                    Property__r.City__c,
                                    Property__r.State__c,
                                    Property__r.Price__c,
                                    Property__r.Thumbnail__c,
-                                   Property__r.X360_Photo_URL__c
+                                   Property__r.X360_Photo_URL__c,
+                                   Property__r.Days_on_Zillow__c
                             FROM favorite__c
                             WHERE user__c='${force.getUserId()}'`)
-            .then(response => response.records.map(favorite => prettifyFavorite(favorite)));
+                .then(response => response.records.map(prettifyFavorite));
+            // .then(response => response.records.map(favorite => prettifyFavorite(favorite)));
     }
 
     favorite(property) {

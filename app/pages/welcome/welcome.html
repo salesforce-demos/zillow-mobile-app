@@ -2,26 +2,24 @@
     <button menuToggle style="border-radius: 0">
         <img src="images/zillow-logo-menu.png" style="height:32px"/>
     </button>
-    <ion-title>Welcome</ion-title>
+    <ion-title>Notifications</ion-title>
 </ion-navbar>
 
 <ion-content class="welcome">
 
-    <ion-slides pager loop="false" autoplay="false" index="1">
-
-        <ion-slide style="background-image: url('images/slide_properties.jpg')">
-            <p>Your dream house is just a few taps away! Select Properties in the menu to start your search.</p>
-        </ion-slide>
-
-        <ion-slide style="background-image: url('images/slide_brokers.jpg')">
-            <p>Select Brokers in the menu to connect with the best brokers in the business in a whole new way!</p>
-        </ion-slide>
-
-        <ion-slide style="background-image: url('images/slide_favorites.jpg')">
-            <img src="images/favorite.png"/>
-            <p>Keep track of your favorites and get notified in real time when important events happen.</p>
-        </ion-slide>
-
-    </ion-slides>
-
+    
+    <ion-list>
+        <ion-item-sliding>
+            <button ion-item (click)="itemTapped($event, favorite)">
+                <ion-thumbnail item-left>
+                    <img src="http://photos3.zillowstatic.com/p_h/IS564d31md2gib1000000000.jpg"/>
+                </ion-thumbnail>
+                <h2>New Open House</h2>
+                <p>An open house has been scheduled for a house you favorited.</p>
+            </button>
+            <ion-item-options>
+                <button danger (click)="deleteItem($event, favorite)">Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>

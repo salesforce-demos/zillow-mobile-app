@@ -15,16 +15,28 @@
 <ion-content *ngIf="view==='list'" class="card-background-page">
     <ion-card *ngFor="let property of properties" (tap)="itemTapped($event, property)">
         <div class="card-buttons">
-            <button clear style="margin-right:-20px" (click)="itemFavorited($event, property)">
-                <ion-icon name="heart-outline"></ion-icon>
-            </button>
+            <div *ngFor="let fav of favorites">
+                <div *ngIf="fav.property_id==property.id">
+                    <button clear style="position: absolute; top: 0px; right: 40px;" (click)="itemFavorited($event, property)">
+                        <ion-icon name="heart"></ion-icon>
+                    </button>
+                </div>
+                <button clear style="position: absolute; top: 0px; right: 40px;" (click)="itemFavorited($event, property)">
+                    <ion-icon name="heart-outline"></ion-icon>
+                </button>
+            </div>
+
             <button clear  (click)="itemBlocked($event, property)">
                 <ion-icon name="remove-circle-outline"></ion-icon>
             </button>
         </div>
         <img src="{{property.picture}}"/>
-        <div class="card-title">{{property.priceFormatted}}</div>
-        <div class="card-subtitle">{{property.address}} {{property.city}} ∙ {{property.beds}}bd ∙ {{property.baths}}ba</div>
+        <div class="card-title">
+            <div class="price">{{property.priceFormatted}}</div>
+            <div class="small-text">{{property.beds}}bd ∙ {{property.baths}}ba</div>
+        </div>
+        <div class="card-subtitle">{{property.address}} {{property.city}}</div>
+        <div class="card-sub-subtitle">{{property.daysonzillow}} days on Zillow</div>
     </ion-card>
 
 </ion-content>

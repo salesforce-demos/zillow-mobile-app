@@ -51,21 +51,27 @@
              </ion-card-content>
             <ion-row no-padding>
                 <ion-col>
-                    <button clear small (click)="favorite($event, property)">
-                        <ion-icon name="heart"></ion-icon>
+                    <button clear small (click)="favorite($event, property);">
+                        <!-- <ion-icon name="heart"></ion-icon> -->
                         Save
                     </button>
                 </ion-col>
                 <ion-col text-center>
                     <button clear small (click)="like($event, property)">
-                        <ion-icon name="thumbs-up"></ion-icon>
-                        Like
+                        <!-- <ion-icon name="thumbs-up"></ion-icon> -->
+                        Hide
                     </button>
                 </ion-col>
                 <ion-col text-right>
                     <button clear small (click)="share($event, property)">
-                        <ion-icon name="share-alt"></ion-icon>
+                        <!-- <ion-icon name="share-alt"></ion-icon> -->
                         Share
+                    </button>
+                </ion-col>
+                <ion-col text-right>
+                    <button clear small (click)="openPage(pages.propertyList)">
+                        <!-- <ion-icon name="share-alt"></ion-icon> -->
+                        More
                     </button>
                 </ion-col>
             </ion-row>

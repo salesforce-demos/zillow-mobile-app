@@ -7,10 +7,6 @@
 
             <ion-item-group>
                 <ion-item-divider>Home Search</ion-item-divider>
-                <button menuClose ion-item (click)="openPage(pages.welcome)">
-                    <ion-icon item-left name="help-circle-outline"></ion-icon>
-                    Welcome
-                </button>
                 <button menuClose ion-item (click)="openPage(pages.propertyList)">
                     <ion-icon item-left>
                         <img src="images/sale.png" style="height:16px;width:16px;"/>
@@ -27,6 +23,15 @@
                     <ion-icon item-left name="person-outline"></ion-icon>
                     Find an Agent
                 </button>
+                <button menuClose ion-item (click)="openPage(pages.welcome)">
+                    <ion-icon item-left name="ios-star-outline"></ion-icon>
+                    Notifications
+                    <div id="badgeicon" style="display: none; background-color: #F6C844;width: 20px;text-align: center;height: 20px;line-height: 20px;border-radius: 100%;">1</div>
+                </button>
+                <!-- <button menuClose ion-item (click)="openPage(pages.notifications)">
+                    <ion-icon item-left name="ios-information-outline"></ion-icon>
+                    Notifications
+                </button> -->
             </ion-item-group>
 
             <ion-item-group>
@@ -46,6 +51,18 @@
              </ion-item-group>
 
             <ion-item-group>
+                <ion-item-divider>Community</ion-item-divider>
+                <button menuClose ion-item >
+                    <ion-icon item-left name="ios-chatboxes-outline"></ion-icon>
+                    Zillow Advice
+                </button>
+                <button menuClose ion-item >
+                    <ion-icon item-left name="help-circle-outline"></ion-icon>
+                    Zillow Help
+                </button>
+             </ion-item-group>
+
+            <ion-item-group>
                 <ion-item-divider>Mortgage</ion-item-divider>
                 <button menuClose ion-item >
                     <ion-icon item-left name="checkmark-circle-outline"></ion-icon>
@@ -54,6 +71,14 @@
                 <button menuClose ion-item >
                     <ion-icon item-left name="cart-outline"></ion-icon>
                     Shop Rates
+                </button>
+                <button menuClose ion-item >
+                    <ion-icon item-left name="calculator"></ion-icon>
+                    Payment Calculator
+                </button>
+                <button menuClose ion-item >
+                    <ion-icon item-left name="calculator"></ion-icon>
+                    Affordability Calculator
                 </button>
              </ion-item-group>
 

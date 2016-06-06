@@ -7,16 +7,41 @@
 
   .card-title {
     position: absolute;
-    bottom: 30px;
-    font-size: 1.8em;
+    bottom: 50px;
     width: 100%;
     //font-weight: bold;
     color: #fff;
     left:12px;
     text-shadow: 0 1px 0 black;
+    display: inline-block;
+  }
+
+  .card-title .price{
+    font-size: 1.8em;
+    display: inline-block;
+  }
+
+  .card-title .small-text{
+    font-size: 1.2em;
+    display: inline-block;
+  }
+
+  .card-small-text{
+    display: inline-block;
+    font-size: 1.2em !important;
   }
 
   .card-subtitle {
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    color: #fff;
+    left:12px;
+    text-shadow: 0 1px 0 black;
+  }
+
+  .card-sub-subtitle {
     font-size: 1.2em;
     position: absolute;
     bottom: 10px;

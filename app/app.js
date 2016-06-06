@@ -6,6 +6,7 @@ import {WelcomePage} from './pages/welcome/welcome';
 import {PropertyListPage} from './pages/property-list/property-list';
 import {BrokerListPage} from './pages/broker-list/broker-list';
 import {FavoriteListPage} from './pages/favorite-list/favorite-list';
+import {Notifications} from './pages/notifications/notifications';
 import {PropertyService} from './services/property-service';
 import {BrokerService} from './services/broker-service';
 import {PushService} from './services/push-service';
@@ -27,6 +28,8 @@ class MyApp {
         return [[Platform], [PushService]];
     }
 
+    
+
     constructor(platform, pushService) {
 
         this.platform = platform;
@@ -38,7 +41,8 @@ class MyApp {
             welcome: WelcomePage,
             propertyList: PropertyListPage,
             brokerList: BrokerListPage,
-            favoriteList: FavoriteListPage
+            favoriteList: FavoriteListPage,
+            notifications: Notifications
         };
 
         this.rootPage = WelcomePage;

@@ -19,13 +19,18 @@ export class PropertyListPage {
     }
 
     ngOnInit() {
-        this.propertyService.findAll().then(properties => this.properties = properties);
+        this.propertyService.findAll().then(properties => {this.properties = properties;});
+        this.loadFavorites();
     }
 
     itemTapped(event, property) {
         this.nav.push(PropertyDetailsPage, {
             property: property
         });
+    }
+
+    loadFavorites() {
+        this.propertyService.getFavorites().then(favorites => {this.favorites = favorites; });
     }
 
     itemFavorited(event, property) {
