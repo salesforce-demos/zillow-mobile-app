@@ -105,7 +105,7 @@ export class PropertyDetailsPage {
                     }
                 });
         } else {
-            this.login();
+            this.login(); 
             this.loggedIn = true;
         }
 
